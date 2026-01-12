@@ -1,0 +1,83 @@
+// dark palette
+$bg--dark--top: #050816;
+$bg--dark--bottom: #050816;
+$bg--card--dark: #0B1020;
+$text--dark: #F5F7FF;
+$text--2--dark: #A3A9C4;
+$brand--blue--dark: #4F46E5;
+$secondary--dark: #22C55E;
+$hover--dark: #22C55E;
+$border--dark: #1E293B;
+
+//light palette
+$bg--light: #F5F7FF;
+$bg--card--light: #FFFFFF;
+$text--light: #0B1020;
+$text--2--light: #5A617A;
+$brand--blue--light: #4F46E5;
+$secondary--light: #16A34A;
+$hover--light: #16A34A;
+$border--light: #E2E8F0;
+
+//colorblind palette
+$bg--colorblind: #050608;
+$bg--card--colorblind: #F8FAFC;
+$text--colorblind: #020617;
+$text--2--colorblind: #FFFFFF;
+$brand--blue--colorblind: #1D4ED8;
+$secondary--colorblind: #F59E0B;
+$hover--colorblind: #F59E0B;
+$border--colorblind: #E2E8F0;
+
+//black & white palette
+$bg--bw: #000000;
+$bg--card--bw: #111111;
+$text--bw: #333333;
+$text--2--bw: #777777;
+$brand--blue--bw: #BBBBBB;
+$secondary--bw: #FFFFFF;
+$hover--bw: #FFFFFF;
+$border--bw: #222222;
+
+$themes: (
+  default: (
+    bg: $bg--dark--top,
+    card-bg: $bg--card--dark,
+    text: $text--dark,
+    text-secondary: $text--2--dark,
+    link: $brand--blue--dark,
+    hover: $secondary--dark,
+    border: $border--dark,
+    secondary: $secondary--dark
+  ),
+  light: (
+    bg: $bg--light,
+    card-bg: $bg--card--light,
+    text: $text--light,
+    text-secondary: $text--2--light,
+    link: $brand--blue--light,
+    hover: $secondary--light,
+    border: $border--light,
+    secondary: $secondary--light
+  ),
+  colorblind: (
+    bg: $bg--colorblind,
+    card-bg: $bg--card--colorblind,
+    text: $text--colorblind,
+    text-secondary: $text--2--colorblind,
+    link: $brand--blue--colorblind,
+    hover: $secondary--colorblind,
+    border: $border--colorblind,
+    secondary: $secondary--colorblind
+  ),
+  bw: (
+    bg: $bg--bw,
+    card-bg: $bg--card--bw,
+    text: $text--bw,
+    text-secondary: $text--2--bw,
+    link: $brand--blue--bw,
+    hover: $secondary--bw,
+    border: $border--bw,
+    secondary: $secondary--bw
+  )
+);
