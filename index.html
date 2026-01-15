@@ -15,34 +15,52 @@
       <strong>Niko</strong>laos Makridis<span class="blink">_</span>
     </div>
     <div class="header-icon">
-      <img src="sources/coding.svg" alt="Coding icon">
+      <img src="sources/coding.svg" alt="Coding icon" id="coding-icon" style="cursor: pointer;">
     </div>
   </header>
+
+  <!-- Quote Modal -->
+  <div id="quote-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h2 class="modal-title">💡 Programming Quote</h2>
+      <div id="quote-container">
+        <p id="quote-text" class="quote-text">Click the icon to get inspired!</p>
+        <p id="quote-author" class="quote-author"></p>
+      </div>
+      <div id="quote-loading" class="quote-loading" style="display: none;">
+        <p>Loading wisdom...</p>
+      </div>
+      <div id="quote-error" class="quote-error" style="display: none;">
+        <p>Oops! Couldn't fetch a quote. Try again!</p>
+      </div>
+    </div>
+  </div>
 
   <!-- Navigation -->
   <nav>
     <!-- Theme Switcher -->
     <div class="nav-icons">
       <ul>
-        <li class="nav-icons-size active">
-          <a data-theme="dark" aria-label="Switch to dark theme">
-            <img src="sources/dark-mode.png" alt="Dark mode">
-          </a>
+        <li class="nav-icons-size active" data-tooltip="dark mode">
+          <button data-theme="dark" aria-label="Switch to dark theme">
+            🌙
+          </button>
         </li>
-        <li class="nav-icons-size">
-          <a data-theme="light" aria-label="Switch to light theme">
-            <img src="sources/light-mode.png" alt="Light mode">
-          </a>
+        <li class="nav-icons-size" data-tooltip="light mode">
+          <button data-theme="light" aria-label="Switch to light theme">
+            ☀️
+          </button>
         </li>
-        <li class="nav-icons-size">
-          <a data-theme="colorblind" aria-label="Switch to colorblind-friendly theme">
-            <img src="sources/colorblind-mode.png" alt="Colorblind mode">
-          </a>
+        <li class="nav-icons-size" data-tooltip="colorblind mode">
+          <button data-theme="colorblind" aria-label="Switch to colorblind-friendly theme">
+            👁️
+          </button>
         </li>
-        <li class="nav-icons-size">
-          <a data-theme="bw" aria-label="Switch to black and white theme">
-            <img src="sources/black-n-white-mode.svg" alt="Black and white mode">
-          </a>
+        <li class="nav-icons-size" data-tooltip="black&white mode">
+          <button data-theme="bw" aria-label="Switch to black and white theme">
+            ⚫⚪
+          </button>
         </li>
       </ul>
     </div>
