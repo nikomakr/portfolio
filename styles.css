@@ -375,9 +375,72 @@ main {
 
 footer {
   background: var(--nav-footer-bg);
-  padding: 1.25rem 1rem;
+  padding: 3rem 1rem 1.25rem 1rem;
   border-top: 1px solid var(--border);
   text-align: center;
+}
+
+.contact-section {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  padding: 2rem;
+}
+
+.contact-title {
+  font-size: clamp(2rem, 6vw, 3rem);
+  color: var(--link);
+  margin-bottom: 2rem;
+}
+
+.contact-btn {
+  background: transparent;
+  color: var(--text);
+  border: 2px solid var(--link);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "SF Mono", Monaco, "Roboto Mono", monospace;
+  position: relative;
+  overflow: hidden;
+}
+.contact-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--link);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+.contact-btn:hover {
+  color: white;
+  border-color: var(--hover);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+}
+.contact-btn:hover::before {
+  left: 0;
+}
+.contact-btn:hover .btn-brackets {
+  color: var(--hover);
+}
+.contact-btn:active {
+  transform: translateY(-1px);
+}
+.contact-btn .btn-brackets {
+  color: var(--link);
+  font-weight: 700;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+.contact-btn .btn-text {
+  margin: 0 0.5rem;
+  letter-spacing: 0.1em;
 }
 
 .footer-centered {
@@ -560,6 +623,127 @@ em {
 }
 .reveal-btn:disabled {
   cursor: not-allowed;
+}
+
+#verification-container,
+#email-reveal-container {
+  text-align: center;
+  padding: 1rem;
+}
+
+.verification-text {
+  font-size: 1.1rem;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.verification-question {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--link);
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(79, 70, 229, 0.1);
+  border-radius: 12px;
+}
+
+.verification-input {
+  width: 100%;
+  max-width: 200px;
+  padding: 0.75rem;
+  font-size: 1.2rem;
+  text-align: center;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: var(--card-bg);
+  color: var(--text);
+  font-family: inherit;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+.verification-input:focus {
+  outline: none;
+  border-color: var(--link);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+.verify-btn {
+  padding: 0.75rem 2rem;
+  background: var(--link);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+.verify-btn:hover {
+  background: var(--hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.verify-btn:active {
+  transform: translateY(0);
+}
+
+.verification-error {
+  color: #ef4444;
+  font-weight: 600;
+  margin-top: 1rem;
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+}
+.success-text {
+  font-size: 1.3rem;
+  color: var(--hover);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.email-label {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.email-link {
+  display: inline-block;
+  font-size: 1.5rem;
+  color: var(--link);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  background: rgba(79, 70, 229, 0.1);
+  border: 2px solid var(--link);
+  border-radius: 12px;
+  margin: 1rem 0;
+  transition: all 0.3s ease;
+}
+.email-link:hover {
+  background: var(--link);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.email-note {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-top: 0.5rem;
 }
 
 .quote-loading,

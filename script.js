@@ -310,3 +310,112 @@ document.addEventListener("keydown", (e) => {
 // Initialize and update on resize
 window.addEventListener("resize", updateProjectsPerView);
 window.addEventListener("DOMContentLoaded", updateProjectsPerView);
+
+// ===================================
+// CONTACT VERIFICATION MODAL
+// ===================================
+
+const contactBtn = document.getElementById("open-contact-btn");
+const contactModal = document.getElementById("contact-modal");
+const contactModalClose = document.getElementById("contact-modal-close");
+const verificationInput = document.getElementById("verification-input");
+const verifyBtn = document.getElementById("verify-btn");
+const verificationError = document.getElementById("verification-error");
+const verificationContainer = document.getElementById("verification-container");
+const emailRevealContainer = document.getElementById("email-reveal-container");
+const verificationQuestion = document.getElementById("verification-question");
+
+// Generate random math problem
+let currentAnswer = 0;
+
+function generateMathProblem() {
+  const num1 = Math.floor(Math.random() * 10) + 1;
+  const num2 = Math.floor(Math.random() * 10) + 1;
+  const operations = [
+    { symbol: "+", calculate: (a, b) => a + b },
+    { symbol: "-", calculate: (a, b) => a - b },
+    { symbol: "×", calculate: (a, b) => a * b },
+  ];
+
+  const operation = operations[Math.floor(Math.random() * operations.length)];
+  currentAnswer = operation.calculate(num1, num2);
+
+  verificationQuestion.textContent = `What is ${num1} ${operation.symbol} ${num2}?`;
+}
+
+// Open contact modal
+function openContactModal() {
+  contactModal.classList.add("show");
+  generateMathProblem();
+  verificationInput.value = "";
+  verificationError.style.display = "none";
+  verificationContainer.style.display = "block";
+  emailRevealContainer.style.display = "none";
+
+  // Focus on input
+  setTimeout(() => verificationInput.focus(), 100);
+}
+
+// Close contact modal
+function closeContactModal() {
+  contactModal.classList.remove("show");
+}
+
+// Verify answer
+function verifyAnswer() {
+  const userAnswer = parseInt(verificationInput.value);
+
+  if (userAnswer === currentAnswer) {
+    // Correct! Show email
+    verificationContainer.style.display = "none";
+    emailRevealContainer.style.display = "block";
+  } else {
+    // Wrong answer
+    verificationError.style.display = "block";
+    verificationInput.value = "";
+    verificationInput.focus();
+
+    // Hide error after 3 seconds
+    setTimeout(() => {
+      verificationError.style.display = "none";
+    }, 3000);
+  }
+}
+
+// Event Listeners
+if (contactBtn) {
+  contactBtn.addEventListener("click", openContactModal);
+}
+
+if (contactModalClose) {
+  contactModalClose.addEventListener("click", closeContactModal);
+}
+
+if (verifyBtn) {
+  verifyBtn.addEventListener("click", verifyAnswer);
+}
+
+// Allow Enter key to submit verification
+if (verificationInput) {
+  verificationInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      verifyAnswer();
+    }
+  });
+}
+
+// Close modal when clicking outside
+if (contactModal) {
+  contactModal.addEventListener("click", (e) => {
+    if (e.target === contactModal) {
+      closeContactModal();
+    }
+  });
+}
+
+// Close contact modal with Escape key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && contactModal.classList.contains("show")) {
+    closeContactModal();
+  }
+});
