@@ -23,16 +23,19 @@
   <div id="quote-modal" class="modal">
     <div class="modal-content">
       <span class="modal-close">&times;</span>
-      <h2 class="modal-title">💡 Programming Quote</h2>
+      <h2 class="modal-title">💻 Programming Joke</h2>
       <div id="quote-container">
-        <p id="quote-text" class="quote-text">Click the icon to get inspired!</p>
+        <p id="quote-text" class="quote-text">Click the icon to get a laugh!</p>
         <p id="quote-author" class="quote-author"></p>
+        <button id="reveal-punchline" class="reveal-btn" style="display: none;">
+          🎭 Reveal Punchline
+        </button>
       </div>
       <div id="quote-loading" class="quote-loading" style="display: none;">
-        <p>Loading wisdom...</p>
+        <p>Loading joke...</p>
       </div>
       <div id="quote-error" class="quote-error" style="display: none;">
-        <p>Oops! Couldn't fetch a quote. Try again!</p>
+        <p>Oops! Couldn't fetch a joke. Try again!</p>
       </div>
     </div>
   </div>
@@ -104,17 +107,68 @@
     <!-- Portfolio Section -->
     <section class="portfolio-projects-section" id="portfolio">
       <h2>Recent Projects</h2>
-      <div class="portfolio-projects">
-        <article class="project">
-          <h3 class="project-title">E-Commerce API</h3>
-          <p class="project-languages">Node • Express • PostgreSQL • JWT</p>
-          <p class="project-summary">
-            REST API w/ auth, payments, inventory. Railway deployed.
-          </p>
-        </article>
+      
+      <div class="portfolio-carousel">
+        <!-- Navigation Arrows -->
+        <button class="carousel-arrow carousel-arrow-left" id="carousel-prev" aria-label="Previous projects">
+          ←
+        </button>
         
-        <!-- Add more projects here -->
+        <div class="portfolio-projects-wrapper">
+          <div class="portfolio-projects" id="projects-container">
+            <article class="project">
+              <h3 class="project-title">Full-Stack Team Application</h3>
+              <p class="project-languages">TypeScript • Spring Boot • MySQL</p>
+              <p class="project-summary">
+                Collaborative full-stack app with TypeScript frontend, Spring Boot API, and MySQL. Deployed to production environment.
+              </p>
+              <a href="https://github.com/nikomakr/fullstack-project" target="_blank" rel="noopener noreferrer" class="project-link">
+                View Repository →
+              </a>
+            </article>
+
+            <article class="project">
+              <h3 class="project-title">OOP Java Application</h3>
+              <p class="project-languages">Java • CSS • JavaScript</p>
+              <p class="project-summary">
+                Complex Java app demonstrating OOP pillars and SOLID principles with interactive UI components.
+              </p>
+              <a href="https://github.com/nikomakr/java-oop-project" target="_blank" rel="noopener noreferrer" class="project-link">
+                View Repository →
+              </a>
+            </article>
+
+            <article class="project">
+              <h3 class="project-title">Browser-Based Game</h3>
+              <p class="project-languages">TypeScript • HTML • CSS</p>
+              <p class="project-summary">
+                Interactive browser game built with modern TypeScript, featuring dynamic gameplay and responsive design.
+              </p>
+              <a href="https://github.com/nikomakr/typescript-game" target="_blank" rel="noopener noreferrer" class="project-link">
+                View Repository →
+              </a>
+            </article>
+
+            <article class="project">
+              <h3 class="project-title">Portfolio Website</h3>
+              <p class="project-languages">HTML • SCSS • JavaScript</p>
+              <p class="project-summary">
+                Modular, responsive portfolio showcasing projects and skills. Features theme switching and API integration.
+              </p>
+              <a href="https://github.com/nikomakr/portfolio" target="_blank" rel="noopener noreferrer" class="project-link">
+                View Repository →
+              </a>
+            </article>
+          </div>
+        </div>
+        
+        <button class="carousel-arrow carousel-arrow-right" id="carousel-next" aria-label="Next projects">
+          →
+        </button>
       </div>
+      
+      <!-- Carousel Indicators -->
+      <div class="carousel-indicators" id="carousel-indicators"></div>
     </section>
   </main>
 

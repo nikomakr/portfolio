@@ -282,7 +282,7 @@ main {
 }
 
 // ===================================
-// PORTFOLIO/PROJECTS
+// PORTFOLIO/PROJECTS - CAROUSEL
 // ===================================
 
 .portfolio-projects-section {
@@ -293,9 +293,80 @@ main {
   }
 }
 
+// Carousel Container
+.portfolio-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+// Carousel Arrows
+.carousel-arrow {
+  background: var(--link);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  
+  // Smaller arrows on mobile
+  @media (max-width: 767px) {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  &:hover:not(:disabled) {
+    background: var(--hover);
+    transform: scale(1.1);
+  }
+  
+  &:active:not(:disabled) {
+    transform: scale(0.95);
+  }
+  
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+}
+
+// Wrapper for overflow control
+.portfolio-projects-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+// Projects Grid with Scroll
 .portfolio-projects {
   display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%; // Mobile: 1 project at a time
   gap: clamp(1.5rem, 4vw, 2.5rem);
+  transition: transform 0.5s ease;
+  width: 100%;
+  
+  // Tablet: 2 projects visible
+  @media (min-width: 768px) {
+    grid-auto-columns: calc((100% / 2) - (clamp(1.5rem, 4vw, 2.5rem) / 2));
+  }
+  
+  // Desktop: 3 projects visible
+  @media (min-width: 1024px) {
+    grid-auto-columns: calc((100% / 3) - (clamp(1.5rem, 4vw, 2.5rem) * 2 / 3));
+  }
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
 }
 
 .project-title {
@@ -314,6 +385,63 @@ main {
 
 .project-summary {
   line-height: 1.6;
+  flex-grow: 1;
+  margin-bottom: 1.5rem;
+}
+
+.project-link {
+  display: inline-block;
+  color: var(--link);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--link);
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  margin-top: auto;
+
+  &:hover {
+    background: var(--link);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Carousel Indicators (dots)
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.carousel-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--border);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  
+  &.active {
+    background: var(--link);
+    width: 30px;
+    border-radius: 6px;
+  }
+  
+  &:hover {
+    background: var(--link);
+    opacity: 0.7;
+  }
 }
 
 // ===================================
@@ -496,11 +624,39 @@ em {
 .quote-author {
   font-size: clamp(0.9rem, 3vw, 1.1rem);
   color: var(--text-secondary);
-  text-align: right;
+  text-align: center;
   font-weight: 600;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: rgba(79, 70, 229, 0.1);
+}
 
-  &::before {
-    content: '— ';
+.reveal-btn {
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  background: var(--link);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+
+  &:hover:not(:disabled) {
+    background: var(--hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
   }
 }
 
