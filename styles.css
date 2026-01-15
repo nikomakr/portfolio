@@ -35,8 +35,8 @@
   --bg: #000000;
   --card-bg: #1e1c1c;
   --nav-footer-bg: #0a0a0a;
-  --text: #333333;
-  --text-secondary: #777777;
+  --text: #FFFFFF;
+  --text-secondary: #CCCCCC;
   --link: #BBBBBB;
   --hover: #FFFFFF;
   --border: #222222;
@@ -186,11 +186,25 @@ main {
   max-width: 100%;
 }
 
+.intro-avatar {
+  width: clamp(100px, 20vw, 150px);
+  height: auto;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem auto;
+  display: block;
+  border: 3px solid var(--link);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
 .intro-text p {
   font-size: clamp(1.6rem, 8vw, 2.8rem);
   font-weight: 300;
   margin-bottom: 1.5rem;
   color: var(--link);
+}
+.intro-text .console-text {
+  color: var(--text-secondary);
+  font-size: 0.85em;
 }
 
 .intro h1 {
@@ -448,6 +462,8 @@ footer {
   flex-direction: column;
   align-items: center;
   gap: 0.75rem;
+  width: 100%;
+  padding: 0 1rem;
 }
 .footer-centered code {
   background: rgba(79, 70, 229, 0.15);
