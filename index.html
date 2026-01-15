@@ -1,80 +1,124 @@
 <!DOCTYPE html>
 <html lang="en" class="theme--dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nikolaos Makridis</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nikolaos Makridis - Junior Full-Stack Developer specializing in React, Node.js, and modern web technologies.">
+  <meta name="author" content="Nikolaos Makridis">
+  <title>Nikolaos Makridis | Full-Stack Developer</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
+  <!-- Header -->
+  <header>
     <div class="header-left-side">
-        <div class="fullName"><strong>Niko</strong>laos Makridis<span class="blink">_</span></div>
+      <strong>Niko</strong>laos Makridis<span class="blink">_</span>
     </div>
     <div class="header-icon">
-        <img src="coding.svg" alt="Code">
+      <img src="sources/coding.svg" alt="Coding icon">
     </div>
-</header>
+  </header>
 
-<nav>
-    <div class="nav-icons" id="nav-left">
-        <ul>
-            <li class="nav-icons-size"><a data-theme="dark" title="Dark"><img src="sources/light-mode.svg" alt="Light"></a></li>
-            <li class="nav-icons-size"><a data-theme="light" title="Light"><img src="sources/dark-mode.svg" alt="Dark"></a></li>
-            <li class="nav-icons-size"><a data-theme="colorblind" title="Colorblind"><img src="sources/colorblind-mode.svg" alt="CB"></a></li>
-            <li class="nav-icons-size"><a data-theme="bw" title="B&W"><img src="sources/bw-mode.svg" alt="BW"></a></li>
-        </ul>
-    </div>
-    <div class="nav-options" id="nav-right">
-        <ul>
-            <li class="nav-options-tiles"><a href="#home" class="nav-home">home</a></li>
-            <li class="nav-options-tiles"><a href="#about" class="nav-about">about me</a></li>
-            <li class="nav-options-tiles"><a href="#portfolio" class="nav-mission">projects</a></li>
-            <li class="nav-options-tiles"><a href="#contact" class="nav-contact">contact</a></li>
-        </ul>
-    </div>
-</nav>
-
-<main>
-    <div class="intro">
-        <div class="intro-text">
-            <p><em>console.log(</em>"Hey, I'm Niko"<em>);</em></p>
-        </div>
-        <div>
-            <h1>Junior Full-Stack Dev | London UK<br><span>React • Node • Sass • PostgreSQL</span></h1>
-        </div>
-    </div>
-
-    <div class="two-column-section" id="about">
-        <div class="column-left">
-            <h2><a>about</a></h2>
-            <p><strong>⚡ Tech:</strong> React • Next.js • Node • PostgreSQL • Sass<br>
-            <strong>💻 Now:</strong> Building responsive UIs • Clean code • Fast apps</p>
-        </div>
+  <!-- Navigation -->
+  <nav>
+    <!-- Theme Switcher -->
+    <div class="nav-icons">
+      <ul>
+        <li class="nav-icons-size active">
+          <a data-theme="dark" aria-label="Switch to dark theme">
+            <img src="sources/dark-mode.png" alt="Dark mode">
+          </a>
+        </li>
+        <li class="nav-icons-size">
+          <a data-theme="light" aria-label="Switch to light theme">
+            <img src="sources/light-mode.png" alt="Light mode">
+          </a>
+        </li>
+        <li class="nav-icons-size">
+          <a data-theme="colorblind" aria-label="Switch to colorblind-friendly theme">
+            <img src="sources/colorblind-mode.png" alt="Colorblind mode">
+          </a>
+        </li>
+        <li class="nav-icons-size">
+          <a data-theme="bw" aria-label="Switch to black and white theme">
+            <img src="sources/black-n-white-mode.svg" alt="Black and white mode">
+          </a>
+        </li>
+      </ul>
     </div>
 
-    <div class="portfolio-projects-section" id="portfolio">
-        <h2>Recent Projects</h2>
-        <div class="portfolio-projects">
-            <div class="project">
-                <h3 class="project-title">E-Commerce API</h3>
-                <h4 class="project-languages">Node • Express • PostgreSQL • JWT</h4>
-                <p class="project-summary">REST API w/ auth, payments, inventory. Railway deployed.</p>
-            </div>
-        </div>
+    <!-- Main Navigation -->
+    <div class="nav-options">
+      <ul>
+        <li class="nav-options-tiles">
+          <a href="#home">home</a>
+        </li>
+        <li class="nav-options-tiles">
+          <a href="#about">about</a>
+        </li>
+        <li class="nav-options-tiles">
+          <a href="#portfolio">projects</a>
+        </li>
+        <li class="nav-options-tiles">
+          <a href="#contact">contact</a>
+        </li>
+      </ul>
     </div>
-</main>
+  </nav>
 
-<footer>
+  <!-- Main Content -->
+  <main>
+    <!-- Hero/Intro Section -->
+    <section class="intro" id="home">
+      <div class="intro-text">
+        <p><span>console.log(</span><strong>"👋 Hey, I'm Niko"</strong>);</p>
+      </div>
+      <h1><span>⚡ Junior Full-Stack Dev 💻 | London U.K. 🇬🇧</span></h1>
+      <h3>HTML • CSS • SassScript • JavaScript • TypeScript • Go / Golang • React JS • C • SQL • Bash <br> Building responsive UIs • Clean code • Responsive design</h3>
+    </section>
+
+    <!-- About Section -->
+    <section class="two-column-section" id="about">
+      <h2>about me</h2>
+      <p>A highly resilient problem solver with a keen eye for detail and a passion for technology, ready to kickstart my career as a software developer. Undertaking a software development bootcamp marked a pivotal career change from an experienced fitness consultant, equipping me with essential skills. My adaptability and critical thinking excel in complex challenges, driven by software's potential for impact. I'm motivated to leverage technology for customer, business, and societal benefit, making problem-solving central to my journey.</p>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-projects-section" id="portfolio">
+      <h2>Recent Projects</h2>
+      <div class="portfolio-projects">
+        <article class="project">
+          <h3 class="project-title">E-Commerce API</h3>
+          <p class="project-languages">Node • Express • PostgreSQL • JWT</p>
+          <p class="project-summary">
+            REST API w/ auth, payments, inventory. Railway deployed.
+          </p>
+        </article>
+        
+        <!-- Add more projects here -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="contact">
     <div class="footer-centered">
-        <code>© 2026 Nikolaos Makridis</code> | London, UK |
-        <ul>
-            <li class="icon-size"><a href="https://github.com/nikomakr" target="_blank" title="GitHub"><img src="sources/github-button.svg" alt="GitHub"></a></li>
-            <li class="icon-size"><a href="https://linkedin.com/in/makridis-nikolaos" target="_blank" title="LinkedIn"><img src="sources/linkedin-button.svg" alt="LinkedIn"></a></li>
-        </ul>
+      <code>© 2026 Nikolaos Makridis | London, UK</code>
+      <ul>
+        <li class="icon-size">
+          <a href="https://github.com/nikomakr" target="_blank" rel="noopener noreferrer" aria-label="Visit my GitHub profile">
+            <img src="sources/github-button.svg" alt="GitHub">
+          </a>
+        </li>
+        <li class="icon-size">
+          <a href="https://linkedin.com/in/makridis-nikolaos" target="_blank" rel="noopener noreferrer" aria-label="Visit my LinkedIn profile">
+            <img src="sources/linkedin-button.svg" alt="LinkedIn">
+          </a>
+        </li>
+      </ul>
     </div>
-</footer>
+  </footer>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
