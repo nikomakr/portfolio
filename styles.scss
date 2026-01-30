@@ -8,29 +8,29 @@
   --nav-footer-bg: #0B1020;
   --text: #F5F7FF;
   --text-secondary: #A3A9C4;
-  --link: #4F46E5;
+  --link: #1c88db;
   --hover: #22C55E;
   --border: #1E293B;
 }
 
 :root.theme--light {
-  --bg: #F5F7FF;
+  --bg: #cbcdd6;
   --card-bg: #FFFFFF;
   --nav-footer-bg: #E8ECFF;
   --text: #0B1020;
   --text-secondary: #5A617A;
-  --link: #4F46E5;
+  --link: #6a64ce;
   --hover: #16A34A;
   --border: #E2E8F0;
 }
 
 :root.theme--colorblind {
-  --bg: #050608;
-  --card-bg: #c0cda3;
-  --nav-footer-bg: #a8b88a;
-  --text: #020617;
+  --bg: #868da1;
+  --card-bg: #d8deb4;
+  --nav-footer-bg: #acc092;
+  --text: #465598;
   --text-secondary: #FFFFFF;
-  --link: #223f90;
+  --link: #676a70;
   --hover: #F59E0B;
   --border: #E2E8F0;
 }
@@ -41,7 +41,7 @@
   --nav-footer-bg: #0a0a0a;
   --text: #FFFFFF;  // Changed from #333333 to white for visibility
   --text-secondary: #CCCCCC;  // Changed from #777777 to light grey
-  --link: #BBBBBB;
+  --link: #8e7b7b;
   --hover: #FFFFFF;
   --border: #222222;
 }
@@ -230,13 +230,33 @@ main {
 }
 
 .intro-avatar {
-  width: clamp(100px, 20vw, 150px);
-  height: auto;
+  width: clamp(120px, 20vw, 180px);
+  height: clamp(120px, 20vw, 180px);
   border-radius: 50%;
-  margin: 0 auto 1.5rem auto;
+  object-fit: cover;
+  margin: 0 auto 2rem auto;
   display: block;
-  border: 3px solid var(--link);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border: 4px solid var(--link);
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.3);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 32px rgba(79, 70, 229, 0.4);
+    border-color: var(--hover);
+  }
+
+  // Tablet and up
+  @media (min-width: 768px) {
+    width: clamp(140px, 18vw, 200px);
+    height: clamp(140px, 18vw, 200px);
+  }
+
+  // Desktop
+  @media (min-width: 1024px) {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 .intro-text {
@@ -245,11 +265,15 @@ main {
     font-weight: 300;
     margin-bottom: 1.5rem;
     color: var(--link);
+
+    strong {
+      color: #F5F5F5
+    }
   }
   
   .console-text {
     color: var(--text-secondary);
-    font-size: 0.85em; // Smaller than the main text
+    font-size: 0.85em;
   }
 }
 
